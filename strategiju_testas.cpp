@@ -1,5 +1,6 @@
 #include <iostream>
 #include <list>
+#include <vector>
 #include <iomanip>
 #include <string>
 #include "studentas.h"
@@ -35,31 +36,55 @@ int main() {
         return 0;
     }
 
-    list<Studentas> studentai;
+    list<Studentas> studentai_list;
     t.reset();
-    nuskaitymas(failas, studentai);
-    cout << studentai.size() << " Duomenų nuskaitymas užtruko: " << t.elapsed() << " s\n";
+    nuskaitymas(failas, studentai_list);
+    cout << "Failo dydis: " << studentai_list.size() << "\n";
+
+    t.reset();
+    vector<Studentas> studentai_vector(studentai_list.begin(), studentai_list.end());
 
     cout << fixed << setprecision(4);
-    cout << "\nStrategijų testavimas su list\n";
 
-    list<Studentas> s1_studentai = studentai;
+    cout << "\nTestas su list\n";
+
+    list<Studentas> s1_studentai = studentai_list;
     list<Studentas> s1_vargsiukai, s1_kietiakai;
     t.reset();
     strategija1_list(s1_studentai, s1_vargsiukai, s1_kietiakai);
-    cout << "1 Strategija užtruko: " << t.elapsed() << " s\n";
+    cout << "Strategija 1: " << t.elapsed() << " s\n";
 
-    list<Studentas> s2_studentai = studentai;
+    list<Studentas> s2_studentai = studentai_list;
     list<Studentas> s2_vargsiukai;
     t.reset();
     strategija2_list(s2_studentai, s2_vargsiukai);
-    cout << "2 Strategija užtruko: " << t.elapsed() << " s\n";
+    cout << "Strategija 2: " << t.elapsed() << " s\n";
 
-    list<Studentas> s3_studentai = studentai;
+    list<Studentas> s3_studentai = studentai_list;
     list<Studentas> s3_vargsiukai;
     t.reset();
     strategija3_list(s3_studentai, s3_vargsiukai);
-    cout << "3 Strategija užtruko: " << t.elapsed() << " s\n";
+    cout << "Strategija 3: " << t.elapsed() << " s\n";
+
+    cout << "\nTestas su vector\n";
+
+    vector<Studentas> v1_studentai = studentai_vector;
+    vector<Studentas> v1_vargsiukai, v1_kietiakai;
+    t.reset();
+    strategija1_vector(v1_studentai, v1_vargsiukai, v1_kietiakai);
+    cout << "Strategija 1: " << t.elapsed() << " s\n";
+
+    vector<Studentas> v2_studentai = studentai_vector;
+    vector<Studentas> v2_vargsiukai;
+    t.reset();
+    strategija2_vector(v2_studentai, v2_vargsiukai);
+    cout << "Strategija 2: " << t.elapsed() << " s\n";
+
+    vector<Studentas> v3_studentai = studentai_vector;
+    vector<Studentas> v3_vargsiukai;
+    t.reset();
+    strategija3_vector(v3_studentai, v3_vargsiukai);
+    cout << "Strategija 3: " << t.elapsed() << " s\n";
 
     return 0;
 }
