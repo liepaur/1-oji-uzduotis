@@ -1,5 +1,9 @@
 #include "strategijos.h"
+#include "studentas.h"   
 #include <algorithm>
+#include <vector>        
+#include <list> 
+using namespace std;
 
 // 1 strategija
 void strategija1_vector(const vector<Studentas>& studentai, vector<Studentas>& vargsiukai, vector<Studentas>& kietiakai) {
