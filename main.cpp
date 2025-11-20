@@ -64,6 +64,23 @@ int main(){
         return 0;
     }
 
+    cout << "Pasirinkite duomenų rūšiavimo būdą:" << endl
+        << "1 - Pagal vardą" << endl
+        << "2 - Pagal pavardę" << endl
+        << "3 - Pagal galutinį balą" << endl;
+    int RusiavimoPasirinkimas;
+    cin >> RusiavimoPasirinkimas;
+    if(RusiavimoPasirinkimas !=1 && RusiavimoPasirinkimas !=2 && RusiavimoPasirinkimas !=3){
+        cout << "Tokio pasirinkimo nėra!" << endl;
+        return 0;
+    }
+    else if(RusiavimoPasirinkimas == 1)
+        studentai.sort(palyginimasVardas);
+    else if(RusiavimoPasirinkimas == 2)
+        studentai.sort(palyginimasPavarde);
+    else if(RusiavimoPasirinkimas == 3)
+        studentai.sort(palyginimasGalutinis);
+
     t.reset();
     grupavimas(studentai, kietiakai, vargsiukai);
     cout << studentai.size() << " Duomenų rūšiavimas užtruko: " << t.elapsed() << " s\n";
