@@ -14,6 +14,8 @@ struct Studentas{
 
 double baloSkaiciavimas(const Studentas& s);
 double baloSkaiciavimasMediana(const Studentas& s);
-bool palyginimas(const Studentas& a, const Studentas& b);
+bool palyginimasVardas(const Studentas &a, const Studentas &b);
+bool palyginimasPavarde(const Studentas &a, const Studentas &b);
+bool palyginimasGalutinis(const Studentas &a, const Studentas &b);
 
 #endif
