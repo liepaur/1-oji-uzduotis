@@ -20,6 +20,14 @@ double baloSkaiciavimasMediana(const Studentas& s) {
     return 0.4 * mediana + 0.6 * s.egz;
 }
 
-bool palyginimas(const Studentas& a, const Studentas& b) {
+bool palyginimasVardas(const Studentas &a, const Studentas &b) {
     return a.vardas < b.vardas;
+}
+
+bool palyginimasPavarde(const Studentas &a, const Studentas &b) {
+    return a.pavarde < b.pavarde;
+}
+
+bool palyginimasGalutinis(const Studentas &a, const Studentas &b) {
+    return a.galutinis < b.galutinis;
 }
