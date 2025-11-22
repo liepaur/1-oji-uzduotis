@@ -1,75 +1,52 @@
-# 1-oji-uzduotis
-Testavimas
+# Studentų strategijų analizė (v1.0)
 
-Testavimo sistemos parametrai:
+Ši programa analizuoja skirtingų konteinerių (list ir vector) darbo spartą
+skirstant studentus į dvi grupes: „kietiakus“ ir „vargšiukus“.
 
-1. CPU: Apple M4
-2. RAM: 16GB
-3. HDD: SSD
+Analizuojamos trys strategijos:
+1️ Strategija – skaidymas į du naujus konteinerius.  
+2️ Strategija – naudojamas vienas naujas konteineris „vargšiukai“, jie ištrinami iš pradinio konteinerio - jame lieka tik „kietiakai“
+3️ Strategija – optimizuota strategija naudojant STL algoritmą - partition.
 
-Naudojant List:
-1000 Duomenų rūšiavimas užtruko: 0.00105775 s
+Releasai:
+1. Sukūriau tris optimizacijos struktūras;
+2. Pridėjau header failą
+3.  Sukūriau testavimo failą su list;
+4. Papildžiau testavimo failą su vector;
+5. Ištaisiau klaidas
+6. Sukūriau CMakeList failą
 
-Kietiakų spausdinimas užtruko: 0.00314454 s
+Instrukcijos:
+1. Atsisiųskite visus projekto failus.
+2. Sukompiliuokite projektą:
+   - Unix/macOS: paleiskite
+   - Arba per CMake:
+       mkdir build && cd build
+       cmake ..
+       make
+3. Paleiskite programą:
+   ./testas
+4. Pasirinkite failo dydį
+5. Programa parodys kiekvienos strategijos vykdymo laikus su list ir su vector.
 
-Vargsiukų spausdinimas užtruko: 1.67e-07 s
+List
 
-Duomenų įrašymas į failus užtruko: 0.00219242 s
-
-1000 Duomenų visos programos vykdymas užtruko: 4.37981 s
-
-10000 Duomenų rūšiavimas užtruko: 0.00904271 s
-
-Kietiakų spausdinimas užtruko: 0.00787392 s
-
-Vargsiukų spausdinimas užtruko: 1.66e-07 s
-
-Duomenų įrašymas į failus užtruko: 0.00575467 s
-
-10000 Duomenų visos programos vykdymas užtruko: 5.2359 s
-
-100000 Duomenų rūšiavimas užtruko: 0.0385363 s
-
-Kietiakų spausdinimas užtruko: 0.078501 s
-
-Vargsiukų spausdinimas užtruko: 1.25e-07 s
-
-Duomenų įrašymas į failus užtruko: 0.0555265 s
-
-100000 Duomenų visos programos vykdymas užtruko: 5.88248 s
-
-1000000 Duomenų rūšiavimas užtruko: 0.380321 s
-
-Kietiakų spausdinimas užtruko: 0.761752 s
-
-Vargsiukų spausdinimas užtruko: 1.66e-07 s
-
-Duomenų įrašymas į failus užtruko: 0.519955 s
-
-1000000 Duomenų visos programos vykdymas užtruko: 13.6649 s
-
-10000000 Duomenų rūšiavimas užtruko: 4.82062 s
-
-Kietiakų spausdinimas užtruko: 8.46322 s
-
-Vargsiukų spausdinimas užtruko: 1.66e-07 s
-
-Duomenų įrašymas į failus užtruko: 6.29449 s
-
-10000000 Duomenų visos programos vykdymas užtruko: 101.239 s
+ | Failo dydis | *1 strategija* | *2 strategija* | *3 strategija* |
+  |:---|:-------------:|:-------------:|:-------------:|
+  | *1000*     | 0.0009 s | 0.0006 s | 0.0004 s|
+  | *10000*    | 0.0045 s | 0.0030 s | 0.0018 s|
+  | *100000*   | 0.3860 s | 0.2897 s | 0.2289 s|
+  | *1000000*  | 0.3701 s | 0.2657 | 0.2130 s|
+  | *10000000* | 4.8027 s | 3.7816 | 4.0265 s|
 
 
+  Vector
 
-1. Sukūriau vektorių, padariau nuskaitymą.
-2. Pridėjau balo skaičiavimo pagal vidurkį ir medianą funkcijas bei spausdinimą į terminalą.
-3. Pridėjau galimybė naudoti generuotus duomenis pagal pasirinktus matmenis.
-4. Pridėjau lygiavimą rezultatų išspasudinime.
-5. Pakoregavau lygiavimą
-6. Pridėjau rūšiavimo funkciją pagal vardą.
-7. Padariau, kad rezulatai būtų spausdinami į failą.
+   | Failo dydis | *1 strategija* | *2 strategija* | *3 strategija* |
+  |:---|:-------------:|:-------------:|:-------------:|
+  | *1000*     | 0.0007 s | 0.0146 s | 0.0004 s|
+  | *10000*    | 0.0048 s | 0.9639 s | 0.0026 s|
+  | *100000*   | 0.4794 s | --* s | 0.005 s|
+  | *1000000*  | 0.6803 s | --* | 0.060 s|
+  | *10000000* | 5.5918 s | --* | 0.598 s|
 
-1. Pridėjau failų generavimo kodą;
-2. Suskaidžiau programą į atskirus failus.
-3. Pridėjau laiko matavimą bendroj programoje
-4. pataisiau pagrindinę programą, pridėjau laiko matavimą, pridėjau galimybę pasirinkti nuskaitomo failo dydį.
-5. Pridėjau testavimo rezulatatų išvedimą.
