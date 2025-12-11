@@ -18,7 +18,8 @@ int main(){
     
     cout << "Pasirinkite duomenų šaltinį:" << endl
         << "1 - Skaityti iš failo" << endl
-        << "2 - Generuoti atsitiktinai" << endl;
+        << "2 - Generuoti atsitiktinai" << endl
+        << "3 - Įvesti ranka" << endl;
         cin >> pasirinkimas;
 
     if (pasirinkimas == 1){
@@ -59,6 +60,33 @@ int main(){
         cin >> ndKiekis;
         studentuGeneravimas(studentai, kiekis, ndKiekis);
     }
+
+    else if(pasirinkimas == 3){
+    int kiekis, ndKiekis;
+    cout << "Įveskite studentų skaičių: ";
+    cin >> kiekis;
+    cout << "Įveskite namų darbų skaičių: ";
+    cin >> ndKiekis;
+
+    for(int i = 0; i < kiekis; i++){
+        Studentas s;
+        cout << "Įveskite studento " << i+1 << " vardą: ";
+        cin >> s.vardas;
+        cout << "Įveskite studento " << i+1 << " pavardę: ";
+        cin >> s.pavarde;
+
+        s.nd.resize(ndKiekis);
+        for(int j = 0; j < ndKiekis; j++){
+            int paz;
+            cout << "Įveskite " << j+1 << " namų darbo pažymį: ";
+            cin >> paz;
+            s.nd.push_back(paz);
+        }
+
+        cout << "Įvesto objekto adresas: " << &s << endl;
+        studentai.push_back(s);
+    }
+}
 
     else{
         cout << "Tokio pasirinkimo nėra!" << endl;
