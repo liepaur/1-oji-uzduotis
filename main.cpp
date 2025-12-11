@@ -107,7 +107,7 @@ int main(){
     cout << studentai.size() << " Duomenų rūšiavimas užtruko: " << t.elapsed() << " s\n";
     
     t.reset();
-    sugrupuotuSpausdinimas("kietiahkai.txt", kietiakai);
+    sugrupuotuSpausdinimas("kietiakai.txt", kietiakai);
     cout << "Kietiakų spausdinimas užtruko: " << t.elapsed() << " s\n";
     
     t.reset();
