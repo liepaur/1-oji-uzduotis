@@ -1,0 +1,4 @@
+Vardas              Pavarde             Galutinis (Vid.)    Galutinis (Med.)    
+------------------------------------------------------------
+li                  li                  235929.80           
+pa                  pa                  235930.20           
